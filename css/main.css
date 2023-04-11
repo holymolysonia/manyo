@@ -1,0 +1,347 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    color: #333;
+    line-height: 1;
+    font-family: 'Pretendard-Regular';
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inner {
+    max-width: 100%;
+    /* 화면의 크기 기준점을 잡아주고 */
+    width: calc(100% - 40px);
+    /* 520px 보다 줄었을 때 여백이 생기게 끔 */
+    margin: 0 auto;
+}
+
+/* 📢📢.header📢📢 */
+header {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+header .inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .inner h1 {
+    height: 25px;
+    /* 로고 잡을 때는 h1이 가진 여백을 확인해보고 잡기 */
+}
+
+header .inner nav {
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 300px;
+    display: none;
+    padding: 0 20px;
+}
+
+header .inner nav .menu_close {
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+
+header .inner nav .menu_close img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+header .inner nav .menu {
+    margin-top: 60px;
+}
+
+header .inner nav ul .depth01 {
+    padding: 25px 0;
+    border-bottom: 1px solid #838383;
+    font-size: 18px;
+}
+
+header .inner nav ul .depth01 .depth02 li {
+    color: #838383;
+    padding-top: 15px;
+}
+
+
+/* 📢📢.main_visual📢📢 */
+
+.main_visual {
+    height: 750px;
+    position: relative;
+    z-index: -1;
+}
+
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual div {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.main_visual div h2 {
+    font-size: 35px;
+    line-height: 1.3;
+    font-family: 'GmarketSansMedium';
+}
+
+.main_visual div a {
+    width: 170px;
+    height: 45px;
+    border: 1px solid #333;
+    line-height: 45px;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* 📢📢.best📢📢 */
+.best {
+    margin: 60px auto;
+}
+
+.best .inner h3 {
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.best .inner .best_menu {
+    margin-bottom: 15px;
+}
+
+.best .inner .best_menu li {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.best .inner .best_menu li.on {
+    color: #BB181D;
+}
+
+.best .inner .list {
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.best .inner .list.on {
+    display: flex;
+}
+
+.best .inner .list .item {
+    width: calc(100% / 2 - 5px);
+}
+
+.best .inner .list .item figure {
+    width: 100%;
+    height: 200px;
+}
+
+.best .inner .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.best .inner .list .item .text {
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+}
+
+.best .inner .list .item .text h4 {
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.best .inner .list .item .text p {
+    text-decoration: line-through;
+    color: #838383;
+}
+
+.best .inner .list .item .text ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.best .inner .list .item .text ul li {
+    font-weight: 700;
+}
+
+.best .inner .list .item .text ul li:last-child {
+    color: #BB181D;
+}
+
+.best .inner a {
+    font-size: 14px;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #333;
+    display: block;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+/* 📢📢.event📢📢 */
+.event {
+    width: 100%;
+    margin: 60px 0;
+    position: relative;
+}
+
+.event .inner {
+    max-width: 100%;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.event .inner .event_btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 500%;
+    left: 0;
+    z-index: 1;
+    transform: translate(0, -50%);
+    margin: 0;
+}
+
+.event .inner .event_btn button {
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ff7579;
+    color: #BB181D;
+}
+
+.event .inner .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.event .inner .title h3 {
+    font-size: 30px;
+}
+
+.event .inner .title a {
+    font-size: 14px;
+}
+
+.event .inner .title a::after {
+    content: url('../img/icon_arrow.png');
+    margin-left: 5px;
+}
+
+.event .inner .item {
+    width: 100%;
+    display: none;
+}
+
+.event .inner .item.on {
+    display: block;
+}
+
+.event .inner .item figure {
+    width: 100%;
+    height: 150px;
+}
+
+.event .inner .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event .inner .item div {
+    margin-top: 10px;
+}
+
+.event .inner .item div h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.event .inner .item div p {
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.event .inner .item div span {
+    color: #838383;
+    font-size: 14px;
+}
+
+/* 📢📢footer📢📢 */
+footer {
+    width: 100%;
+    background-color: #BB181D;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    padding: 25px 0;
+}
