@@ -7,6 +7,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마녀공장 모바일</title>
     <link href="css/main.css" rel="stylesheet" />
+    <script>
+        window.onload = function () {
+
+            let menuOpenBtn = document.getElementsByClassName('menu_open')[0];
+            let body = document.getElementsByTagName('body')[0];
+            let nav = document.getElementsByTagName('nav')[0];
+            let menuCloseBtn = nav.getElementsByClassName('menu_close')[0];
+
+            nav.style.display = 'none'; //변수 속성값 잡아주기
+            menuOpenBtn.onclick = function () {
+                if (nav.style.display = 'none') {
+                    nav.style.display = 'block';
+
+                    //배경컬러 나타나기
+                    body.classList.add('body_bg');
+                }//if end
+            }// menuOpenBtn.onclick end
+
+            menuCloseBtn.onclick = function () {
+                if (nav.style.display = 'block') {
+                    nav.style.display = 'none';
+
+                    //배경컬러 없애기
+                    body.classList.remove('body_bg');
+                }//if end
+            }//menuCloseBtn.onclick end
+
+            let best = document.getElementsByClassName('best')[0];
+            let bestTapMenu = best.getElementsByTagName('li');
+            let bestList = best.getElementsByClassName('list');
+
+            for (let i = 0; i < bestTapMenu.length; i++) {
+                bestTapMenu[i].onclick = function () {
+                    bestTapMenu[0].classList.remove('on');
+                    bestTapMenu[1].classList.remove('on');
+                    bestTapMenu[2].classList.remove('on');
+                    bestTapMenu[3].classList.remove('on');
+                    this.classList.add('on');
+
+                    bestList[0].classList.remove('on');
+                    bestList[1].classList.remove('on');
+                    bestList[2].classList.remove('on');
+                    bestList[3].classList.remove('on');
+                    bestList[i].classList.add('on');
+                }//bestTapMenu[i].onclick end
+            }//for end
+
+            //event 이전다음버튼
+            let event = document.getElementsByClassName('event')[0];
+            let eventItem = event.getElementsByClassName('item');
+
+            let eventPrev = event.getElementsByClassName('event_btn_prev')[0];
+            let eventNext = event.getElementsByClassName('event_btn_next')[0];
+            let i = 0;
+
+            eventNext.onclick = function () {
+                i++;
+                if (i >= eventItem.length) {
+                    i = eventItem.length - 1;
+                }//if end
+                eventItem[0].classList.remove('on');
+                eventItem[1].classList.remove('on');
+                eventItem[2].classList.remove('on');
+                eventItem[3].classList.remove('on');
+                eventItem[i].classList.add('on');
+            }//eventNext.onclick end
+
+            eventPrev.onclick = function () {
+                i--;
+                if (i <= 0) {
+                    i = 0;
+                }//if end
+                eventItem[0].classList.remove('on');
+                eventItem[1].classList.remove('on');
+                eventItem[2].classList.remove('on');
+                eventItem[3].classList.remove('on');
+                eventItem[i].classList.add('on');
+            }//eventPrev.onclick end
+        }//window.onload end
+    </script>
 </head>
 
 <body>
@@ -66,7 +146,7 @@
         <section class="main_visual">
             <img src="img/main01.jpg" alt="메인비주얼" />
             <div>
-                <h2>히더 진정 라인 런치 기념
+                <h2>히더 진정 라인 런칭 기념
                     Special Week</h2>
                 <a href="#">자세히보기</a>
             </div>
@@ -229,12 +309,12 @@
 
         <section class="event">
             <div class="inner">
+                <div class="event_btn">
+                    <button class="event_btn_prev">이전</button>
+                    <button class="event_btn_next">다음</button>
+                </div><!-- .event_btn end -->
                 <div class="title">
                     <h3>Event</h3>
-                    <div class="event_btn">
-                        <button class="event_btn_prev">이전</button>
-                        <button class="event_btn_next">다음</button>
-                    </div><!-- .event_btn end -->
                     <a href="#">전체보기</a>
                 </div><!-- .title end -->
                 <div class="item on">
@@ -242,12 +322,12 @@
                         <figure>
                             <img src="img/event01.jpg" alt="쏟아지는 혜택" />
                         </figure>
-                        <div>
+                        <div class="text">
                             <h4>마녀공장 집들이에 초대합니다!</h4>
                             <p>어서오세요 공식몰이 새 단장했어요<br />
                                 할인 쿠폰&선착순 1,000명 사은품 증정</p>
                             <span>2023.04.04 am 10:00 - 04.30 pm 11:59</span>
-                        </div>
+                        </div><!-- .text end -->
                     </a>
                 </div><!-- .item end -->
 
@@ -256,43 +336,42 @@
                         <figure>
                             <img src="img/event02.jpg" alt="쏟아지는 혜택" />
                         </figure>
-                        <div>
-                            <h4>마녀공장 집들이에 초대합니다!</h4>
-                            <p>어서오세요 공식몰이 새 단장했어요<br />
-                                할인 쿠폰&선착순 1,000명 사은품 증정</p>
+                        <div class="text">
+                            <h4>쏟아지는 혜택</h4>
+                            <p>마녀공장 카카오 플친 추가 시<br />
+                                2,000원 할인 쿠폰 증정</p>
                             <span>2023.04.04 am 10:00 - 04.30 pm 11:59</span>
-                        </div>
+                        </div><!-- .text end -->
                     </a>
                 </div><!-- .item end -->
 
                 <div class="item">
                     <a href="#">
                         <figure>
-                            <img src="img/event01.jpg" alt="쏟아지는 혜택" />
+                            <img src="img/event03.jpg" alt="쏟아지는 혜택" />
                         </figure>
-                        <div>
-                            <h4>마녀공장 집들이에 초대합니다!</h4>
-                            <p>어서오세요 공식몰이 새 단장했어요<br />
-                                할인 쿠폰&선착순 1,000명 사은품 증정</p>
-                            <span>2023.04.04 am 10:00 - 04.30 pm 11:59</span>
-                        </div>
+                        <div class="text">
+                            <h4>딱 일주일만, 최대 70% 할인 쿠폰 증정</h4>
+                            <p>히더 진정 라인 런칭 기념<br />
+                                Special Week</p>
+                            <span>2023.04.07 am 10:00 - 04.14 am 10:00</span>
+                        </div><!-- .text end -->
                     </a>
                 </div><!-- .item end -->
 
                 <div class="item">
                     <a href="#">
                         <figure>
-                            <img src="img/event01.jpg" alt="쏟아지는 혜택" />
+                            <img src="img/event04.jpg" alt="쏟아지는 혜택" />
                         </figure>
-                        <div>
-                            <h4>마녀공장 집들이에 초대합니다!</h4>
-                            <p>어서오세요 공식몰이 새 단장했어요<br />
-                                할인 쿠폰&선착순 1,000명 사은품 증정</p>
-                            <span>2023.04.04 am 10:00 - 04.30 pm 11:59</span>
-                        </div>
+                        <div class="text">
+                            <h4>4월, 함께 나무 심고 기부해요</h4>
+                            <p>서울 도심 속 생명의 싹 틔우기<br />
+                                4월5일 매출 전액 나무 심기 기부</p>
+                            <span>2023.04.05 am 10:00 - 04.12 am 10:00</span>
+                        </div><!-- .text end -->
                     </a>
                 </div><!-- .item end -->
-            </div><!-- .inner end -->
         </section><!-- .event end -->
     </main>
 
@@ -303,50 +382,7 @@
         </p>
     </footer>
 
-    <script>
-        let menuOpenBtn = document.getElementsByClassName('menu_open')[0];
-        let nav = document.getElementsByTagName('nav')[0];
-        let menuCloseBtn = nav.getElementsByClassName('menu_close')[0];
 
-        menuOpenBtn.onclick = function () {
-            if (nav.style.display = 'none') {
-                nav.style.display = 'block';
-            }//if end
-        }// menuOpenBtn.onclick end
-
-        menuCloseBtn.onclick = function () {
-            if (nav.style.display = 'block') {
-                nav.style.display = 'none';
-            }//if end
-        }//menuCloseBtn.onclick end
-
-        let best = document.getElementsByClassName('best')[0];
-        let bestTapMenu = best.getElementsByTagName('li');
-        let bestList = best.getElementsByClassName('list');
-
-        for (let i = 0; i < bestTapMenu.length; i++) {
-            bestTapMenu[i].onclick = function () {
-                bestTapMenu[0].classList.remove('on');
-                bestTapMenu[1].classList.remove('on');
-                bestTapMenu[2].classList.remove('on');
-                bestTapMenu[3].classList.remove('on');
-                this.classList.add('on');
-
-                bestList[0].classList.remove('on');
-                bestList[1].classList.remove('on');
-                bestList[2].classList.remove('on');
-                bestList[3].classList.remove('on');
-                bestList[i].classList.add('on');
-            }//bestTapMenu[i].onclick end
-        }//for end
-
-        let event = document.getElementsByClassName('event')[0];
-        let eventItem = event.getElementsByClassName('item');
-        let eventBtnPrev = event.getElementsByClassName('event_btn_prev')[0];
-        let eventBtnNext = event.getElementsByClassName('event_btn_next')[0];
-
-
-    </script>
 </body>
 
 </html>
